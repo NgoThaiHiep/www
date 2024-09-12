@@ -4,28 +4,61 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<style>
+	   
+   form {
+      width: 900px;
+      margin: 20px auto;
+      background-color: #b0e0e6;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      color:'white';
+    }
+   	.blue-border {
+      border: 2px solid blue;
+     
+    }
+  
+    table {
+      width: 100%;
+      color: white;
+    }
+    td {
+      padding: 5px;
+    }
+	/*   input[type="text"], input[type="email"], input[type="number"], textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    } */
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    .button-group {
+      text-align: center;
+    }
+    .button-group button {
+      margin: 10px;
+    }
+  </style>
 <body>
 <form action="student" method="post"> 
-		<div>
-			<label for="First_name">First name </label>  
-			<input 
-				type="text" 
-				name="txtFName" 
-				maxlength="30" 
-            	required
-            	>
-			(max 30 characters a-z an A-Z)
-		</div>
-		<div>
-			<label for="Last_name"> Last name </label>  
-			<input 
-				type="text" 
-				name="txtLName"
-				maxlength="30"
-				required
-				>
-			(max 30 characters a-z an A-Z)
-		</div>
+  <table>
+	<tr>
+		<td>First name:</td>
+		<td><input type="text" name="txtFName" maxlength="30">(max 30 characters a-z an A-Z)</td>
+    	
+	</tr>
+    <tr>
+    	<td>Last name:</td>
+      	<td><input type="text" name="txtLName" maxlength="30">(max 30 characters a-z an A-Z)</td>
+      	
+    </tr>
 		
 		<!-- <div>
 		<label for="Day">Day of birth  </label>
@@ -106,98 +139,190 @@
 		        <option value="2026">2026</option> 
 		    </select>
 		</div> -->
+		<tr>
+	      <td>Date of birth:</td>
+	      <td>
+	        <select name="year" id="year" onchange="updateDays()">
+	          <option>Year</option>
+	        </select>
+	        <select name="month" id="month" onchange="updateDays()">
+	          <option>Month</option>
+	        </select>
+	        <select name="day" id="day">
+	          <option>Day</option>
+	        </select>
+	      </td>
+	    </tr>
 		
-		<div>
-		<label for="Day">Day of birth  </label>
-		 <select id="day" name="day">
-			<option value="">Day</option>
-		</select>
-		 <select id="month" name="month" onchange="updateDays()">
-			<option value="" >Month</option>
-		</select> 
-		<select id="year" name="year" onchange="updateDays()">
-			<option value="">Year</option>
-		</select>
-		</div>
-		
-		<div>
-			<label for="Email">Email</label>
-			<input 
-				type="email" 
-				name="txtEmail" 
-				required
-			>
-			
-			
-		</div>
-		<div>
-			<label for="MobileNumber">Mobile number</label>
-			<input 
-				type="text" 
-				name="MobileNumber"
-				pattern="\d{10}"
-				required
-				>
-			(10 digit number) 
-		</div>
-		<div>
-			<label for="Gender">Gender</label>
-				<label for="Gender">Male</label>
-				<input type="radio" name="Gender" value="Male">
+	    <tr>
+	      <td>Email:</td>
+	      <td><input type="email" name="txtEmail"></td>
+	    </tr>
+	    
+		<tr>
+      		<td>Mobile number:</td>
+			 <td><input type="number" name="txtMobileNumber" maxlength="10">(10 digit number)</td>
+		</tr>
+	
+		<tr>
+			<td> Gender</td>
+				<td>
+					Male<input type="radio" name="Gender" value="Male">
+					
+					Female<input type="radio" name="Gender" value="Fermale">
+				</td>
+		</tr>
+		<tr>
+			<td>Address</td>
+			<td><textarea rows="5"  name="taAddress"></textarea></td>
+		</tr>
+		<tr>
+			<td>City</td>
+			<td>
+				<input 
+					type="text" 
+					name="txtCity" 
+					maxlength="30" 
+	            	required
+	            	>
+				(max 30 characters a-z an A-Z)
+			</td>
+		</tr>
+		<tr>
+			<td>Pin code</td>
+			<td>
+				<input 
+					type="text" 
+					name="txtPinCode"
+					pattern="\d{6}"
+					required
+					>
+				(6 digit number) 
+			</td>
+		</tr>
+		<tr>
+			<td>State</td>
+			<td>
+				<input 
+					type="text" 
+					name="txtState" 
+					maxlength="30" 
+	            	required
+	            	>
+				(max 30 characters a-z an A-Z)
+			</td>
+		</tr>
+		<tr>
+			<td>Country</td>
+			<td>
+				<select id="txtCountry" name="txtCountry"></select>
+			</td>
+		</tr>
+		<tr>
+			<td>Hobbies</td>
+			<td>
+				Drawing
+					<input type="checkbox" name="ckHobbies" value="Drawing">
 				
-				<label for="Gender">Fermale</label>
-				<input type="radio" name="Gender" value="Fermale">
-		</div>
-		<div>
-			<label for="Address">Address</label>
-			<textarea rows="7" cols="50" name="taAddress"></textarea>
-		</div>
-		<div>
-			<label for="City">City</label>
-			<input 
-				type="text" 
-				name="txtCity" 
-				maxlength="30" 
-            	required
-            	>
-			(max 30 characters a-z an A-Z)
-		</div>
-		<div>
-			<label for="Pin_code">Pin code</label>
-			<input 
-				type="text" 
-				name="txtPinCode"
-				pattern="\d{6}"
-				required
-				>
-			(6 digit number) 
-		</div>
-		<div>
-			<label for="State">State</label>
-			<input 
-				type="text" 
-				name="txtState" 
-				maxlength="30" 
-            	required
-            	>
-			(max 30 characters a-z an A-Z)
-		</div>
-		<div>
-			<label for="Country">Country</label>
-			<select id="txtCountry" name="txtCountry">
-			</select>
-		</div>
-		<div>
-			<label for="Hobbies">Hobbies</label>
-			<div>
-				<label for="Drawing">Drawing</label>
-				<input type="checkbox" name="ckHobbies" id = "">
-			</div>
-		</div>
+				Singing
+					<input type="checkbox" name="ckHobbies" value="Singing">
+				Dancing
+					<input type="checkbox" name="ckHobbies" value="Dancing">
+				Sketching
+					<input type="checkbox" name="ckHobbies" value="Sketching">
+				Others
+					<input type="checkbox" name="ckHobbies" value="Others" id="otherCk" onclick="toggleInput()" >
+					<input type="text" name="ckHobbies" id="otherIP" disabled> 
+			</td>
+			
+		</tr>
 		
+	  </table>
+		
+  <table>
+	<tr>
+		<td>
+	  		Qualification
+	  	<td>
+	  	<div class="blue-border">
+			 <table >
+			    <tr >
+			      <th>Sl.No.</th>
+			      <th>Examination</th>
+			      <th>Board</th>
+			      <th>Percentage</th>
+			      <th>Year of Passing</th>
+			    </tr>
+			    <tr>
+			      <td>1</td>
+			      <td>Class X</td>
+			      <td><input type="text" name="boardClassX" maxlength="10"></td>
+			      <td><input type="text" name="percentageClassX" maxlength="5"></td>
+			      <td><input type="text" name="yearClassX" maxlength="4"></td>
+			    </tr>
+			    <tr>
+			      <td>2</td>
+			      <td>Class XII</td>
+			      <td><input type="text" name="boardClassXII" maxlength="10"></td>
+			      <td><input type="text" name="percentageClassXII" maxlength="5"></td>
+			      <td><input type="text" name="yearClassXII" maxlength="4"></td>
+			    </tr>
+			    <tr>
+			      <td>3</td>
+			      <td>Graduation</td>
+			      <td><input type="text" name="boardGraduation" maxlength="10"></td>
+			      <td><input type="text" name="percentageGraduation" maxlength="5"></td>
+			      <td><input type="text" name="yearGraduation" maxlength="4"></td>
+			    </tr>
+			    <tr>
+			      <td>4</td>
+			      <td>Masters</td>
+			      <td><input type="text" name="boardMasters" maxlength="10"></td>
+			      <td><input type="text" name="percentageMasters" maxlength="5"></td>
+			      <td><input type="text" name="yearMasters" maxlength="4"></td>
+			    </tr>
+			     <tr>
+			      <td></td>
+			      <td></td>
+			      <td>(10 Char max)</td>
+			      <td>(upto 2 decimal)</td>
+			      <td></td>
+			    </tr>
+			 </table>
+			 </div>
+		</td>
+	</tr>
+	  <tr>
+	  	<td>
+	  		Course applies for
+	  	</td>
+	  	<td>
+	  		<label>BCA<input type="radio" name="txtCourse" value="BCA"> </label>
+		  	<label>B.Com<input type="radio" name="txtCourse" value="B.Com"> </label>
+		  	<label>B.Sc<input type="radio" name="txtCourse" value="B.Sc"></label>
+		  	<label>B.A<input type="radio" name="txtCourse" value="B.A"> </label>
+	  	</td>
+	  </tr>
+  </table>
+	  <div class="button-group">
+	    <button type="submit">Submit</button>
+	    <button type="reset">Reset</button>
+	  </div>
 	</form>
 </body>
 <script>
+		function toggleInput() {
+		    const otherCheckbox = document.getElementById('otherCk');
+		    const otherInput = document.getElementById('otherIP');
+		
+		    // Enable or disable the text input based on whether the checkbox is checked
+		    if (otherCheckbox.checked) {
+		      otherInput.disabled = false;
+		    } else {
+		      otherInput.disabled = true;
+		      otherInput.value = ''; // Clear the input field if unchecked
+		    }
+		  }
         function updateDays() {
             var month = document.getElementById('month').value;
             var year = document.getElementById('year').value;
