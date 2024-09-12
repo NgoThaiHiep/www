@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="student" method="post"> 
+		<div>
+			<label for="First_name">First name </label>  
+			<input 
+				type="text" 
+				name="txtFName" 
+				maxlength="30" 
+            	required
+            	>
+			(max 30 characters a-z an A-Z)
+		</div>
+		<div>
+			<label for="Last_name"> Last name </label>  
+			<input 
+				type="text" 
+				name="txtLName"
+				maxlength="30"
+				required
+				>
+			(max 30 characters a-z an A-Z)
+		</div>
+		
+		<!-- <div>
+		<label for="Day">Day of birth  </label>
+			<select id="day" name="day">
+		        <option value="1">1</option>
+		        <option value="2">2</option>
+		        <option value="3">3</option>
+		        <option value="4">4</option>
+		        <option value="5">5</option>
+		        <option value="6">6</option>
+		        <option value="7">7</option>
+		        <option value="8">8</option>
+		        <option value="9">9</option>
+		        <option value="10">10</option>
+		        <option value="11">11</option>
+		        <option value="12">12</option>
+		        <option value="13">13</option>
+		        <option value="14">14</option>
+		        <option value="15">15</option>
+		        <option value="16">16</option>
+		        <option value="17">17</option>
+		        <option value="18">18</option>
+		        <option value="19">19</option>
+		        <option value="20">20</option>
+		        <option value="21">21</option>
+		        <option value="22">22</option>
+		        <option value="23">23</option>
+		        <option value="24">24</option>
+		        <option value="25">25</option>
+		        <option value="26">26</option>
+		        <option value="27">27</option>
+		        <option value="28">28</option>
+		        <option value="29">29</option>
+		        <option value="30">30</option>
+		        <option value="31">31</option>
+		    </select>
+		    <select id="month" name="month" onchange="updateDays()">
+		        <option value="1">Tháng 1</option>
+		        <option value="2">Tháng 2</option>
+		        <option value="3">Tháng 3</option>
+		        <option value="4">Tháng 4</option>
+		        <option value="5">Tháng 5</option>
+		        <option value="6">Tháng 6</option>
+		        <option value="7">Tháng 7</option>
+		        <option value="8">Tháng 8</option>
+		        <option value="9">Tháng 9</option>
+		        <option value="10">Tháng 10</option>
+		        <option value="11">Tháng 11</option>
+		        <option value="12">Tháng 12</option>
+		    </select>
+		    <select id="year" name="year" onchange="updateDays()">
+		    	<option value="2024">2000</option>
+		    	<option value="2024">2001</option>
+		    	<option value="2024">2002</option>
+		        <option value="2025">2003</option>
+		        <option value="2026">2004</option>
+		   		<option value="2024">2005</option>
+		        <option value="2025">2006</option>
+		        <option value="2026">2007</option>
+		   		<option value="2024">2008</option>
+		        <option value="2025">2009</option>
+		        <option value="2026">2010</option>
+		        <option value="2026">2011</option>
+		   		<option value="2024">2012</option>
+		        <option value="2025">2013</option>
+		        <option value="2026">2014</option>
+		   		<option value="2024">2015</option>
+		        <option value="2025">2016</option>
+		        <option value="2026">2017</option>
+		   		<option value="2024">2018</option>
+		        <option value="2025">2019</option>
+		        <option value="2026">2020</option>
+		    	<option value="2024">2021</option>
+		        <option value="2025">2022</option>
+		        <option value="2026">2023</option>
+		        <option value="2024">2024</option>
+		        <option value="2025">2025</option>
+		        <option value="2026">2026</option> 
+		    </select>
+		</div> -->
+		
+		<div>
+		<label for="Day">Day of birth  </label>
+		 <select id="day" name="day">
+			<option value="">Day</option>
+		</select>
+		 <select id="month" name="month" onchange="updateDays()">
+			<option value="" >Month</option>
+		</select> 
+		<select id="year" name="year" onchange="updateDays()">
+			<option value="">Year</option>
+		</select>
+		</div>
+		
+		<div>
+			<label for="Email">Email</label>
+			<input 
+				type="email" 
+				name="txtEmail" 
+				required
+			>
+			
+			
+		</div>
+		<div>
+			<label for="MobileNumber">Mobile number</label>
+			<input 
+				type="text" 
+				name="MobileNumber"
+				pattern="\d{10}"
+				required
+				>
+			(10 digit number) 
+		</div>
+		<div>
+			<label for="Gender">Gender</label>
+				<label for="Gender">Male</label>
+				<input type="radio" name="Gender" value="Male">
+				
+				<label for="Gender">Fermale</label>
+				<input type="radio" name="Gender" value="Fermale">
+		</div>
+		<div>
+			<label for="Address">Address</label>
+			<textarea rows="7" cols="50" name="taAddress"></textarea>
+		</div>
+		<div>
+			<label for="City">City</label>
+			<input 
+				type="text" 
+				name="txtCity" 
+				maxlength="30" 
+            	required
+            	>
+			(max 30 characters a-z an A-Z)
+		</div>
+		<div>
+			<label for="Pin_code">Pin code</label>
+			<input 
+				type="text" 
+				name="txtPinCode"
+				pattern="\d{6}"
+				required
+				>
+			(6 digit number) 
+		</div>
+		<div>
+			<label for="State">State</label>
+			<input 
+				type="text" 
+				name="txtState" 
+				maxlength="30" 
+            	required
+            	>
+			(max 30 characters a-z an A-Z)
+		</div>
+		<div>
+			<label for="Country">Country</label>
+			<select id="txtCountry" name="txtCountry">
+			</select>
+		</div>
+		<div>
+			<label for="Hobbies">Hobbies</label>
+			<div>
+				<label for="Drawing">Drawing</label>
+				<input type="checkbox" name="ckHobbies" id = "">
+			</div>
+		</div>
+		
+	</form>
+</body>
+<script>
+        function updateDays() {
+            var month = document.getElementById('month').value;
+            var year = document.getElementById('year').value;
+            var daysInMonth = new Date(year, month, 0).getDate();
+
+            var daySelect = document.getElementById('day');
+            daySelect.innerHTML = '';
+
+            for (var day = 1; day <= daysInMonth; day++) {
+                var option = document.createElement('option');
+                option.value = day;
+                option.text = day;
+                daySelect.add(option);
+            }
+        }
+        
+        const selectElement_day = document.getElementById("day");
+    	for (let i = 1; i <= 31; i++) {
+    		const option = document.createElement("option");
+    		option.value = i;
+    		option.text = i;
+    		selectElement_day.appendChild(option);
+    	}
+    	
+    	const selectElement_month = document.getElementById("month");
+    	for (let i = 1; i <= 12; i++) {
+    		const option = document.createElement("option");
+    		option.value = i;
+    		option.text = i;
+    		selectElement_month.appendChild(option);
+    	}
+    	
+    	const selectElement_year = document.getElementById("year");
+    	const currentYear = new Date().getFullYear();
+    	for (let year = 1900; year <= currentYear; year++) {
+    		const option = document.createElement("option");
+    		option.value = year;
+    		option.text = year;
+    		selectElement_year.appendChild(option);
+    	}
+    	
+    	 document.addEventListener('DOMContentLoaded', function() {
+             fetch('https://restcountries.com/v3.1/all')
+                 .then(response => response.json())
+                 .then(data => {
+                     const select = document.getElementById('txtCountry');
+                     data.forEach(country => {
+                         const option = document.createElement('option');
+                         option.value = country.cca2; 
+                         option.textContent = country.name.common; 
+                         select.appendChild(option);
+                     });
+                 })
+                 .catch(error => console.error('Error loading countries:', error));
+         });
+    </script>
+</html>
