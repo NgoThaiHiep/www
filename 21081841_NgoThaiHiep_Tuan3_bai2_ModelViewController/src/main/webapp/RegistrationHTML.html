@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<head>
+    <title>User Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+          
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="radio"] {
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #4267b2;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #365899;
+        }
+    </style>
+</head>
+<body>
+    <form action="Registration" method="post">
+    	
+	    	
+        <h2>User Registration Form</h2>
+      	<input type="text" name="fName" id="fName" placeholder="First Name" style="width: 49%" required>
+      	<input type="text" name="lName" id="lName" placeholder="Last Name" style="width: 49%" required>
+     
+        <input type="email" id="email" name="email" required style="width: 100%" placeholder="Your Email">
+
+   
+        <input type="email" id="re-enter-email" name="re-enter-email" required placeholder="Re-enter Email" style="width: 100%">
+
+      
+        <input type="password" id="password" name="password" required style="width: 100%" placeholder="New Password">
+
+        <label for="birthday">Birthday:</label>
+        <select id="month" name="month" onchange="updateDays()" required>
+            <option value="">Month</option>
+        </select>
+        <select id="day" name="day" required>
+            <option value="">Day</option>
+        </select>
+        <select id="year" name="year" onchange="updateDays()" required>
+            <option value="">Year</option>
+        </select >
+        <br>
+        <label>
+        Gender:
+        <input type="radio" id="female" name="gender" value="female" required>Female
+        <input type="radio" id="male" name="gender" value="male" required>Male<br><br>
+		</label>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+<script type="text/javascript">
+		function updateDays() {
+		    var month = document.getElementById('month').value;
+		    var year = document.getElementById('year').value;
+		    var daysInMonth = new Date(year, month, 0).getDate();
+		
+		    var daySelect = document.getElementById('day');
+		    daySelect.innerHTML = '';
+		
+		    for (var day = 1; day <= daysInMonth; day++) {
+		        var option = document.createElement('option');
+		        option.value = day;
+		        option.text = day;
+		        daySelect.add(option);
+		    }
+		}
+		
+		const selectElement_day = document.getElementById("day");
+		for (let i = 1; i <= 31; i++) {
+			const option = document.createElement("option");
+			option.value = i;
+			option.text = i;
+			selectElement_day.appendChild(option);
+		}
+		
+		const selectElement_month = document.getElementById("month");
+		for (let i = 1; i <= 12; i++) {
+			const option = document.createElement("option");
+			option.value = i;
+			option.text = i;
+			selectElement_month.appendChild(option);
+		}
+		
+		const selectElement_year = document.getElementById("year");
+		const currentYear = new Date().getFullYear();
+		for (let year = 1900; year <= currentYear; year++) {
+			const option = document.createElement("option");
+			option.value = year;
+			option.text = year;
+			selectElement_year.appendChild(option);
+}
+</script>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+	   
+   form {
+      width: 900px;
+      margin: 20px auto;
+      background-color: #b0e0e6;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      color:'white';
+    }
+   	.blue-border {
+      border: 2px solid blue;
+     
+    }
+  
+    table {
+      width: 100%;
+      color: white;
+    }
+    td {
+      padding: 5px;
+    }
+	/*   input[type="text"], input[type="email"], input[type="number"], textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    } */
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    .button-group {
+      text-align: center;
+    }
+    .button-group button {
+      margin: 10px;
+    }
+  </style>
+<body>
+<form action="student" method="post"> 
+  <table>
+	<tr>
+		<td>First name:</td>
+		<td><input type="text" name="txtFName" maxlength="30">(max 30 characters a-z an A-Z)</td>
+    	
+	</tr>
+    <tr>
+    	<td>Last name:</td>
+      	<td><input type="text" name="txtLName" maxlength="30">(max 30 characters a-z an A-Z)</td>
+      	
+    </tr>
+		
+		<!-- <div>
+		<label for="Day">Day of birth  </label>
+			<select id="day" name="day">
+		        <option value="1">1</option>
+		        <option value="2">2</option>
+		        <option value="3">3</option>
+		        <option value="4">4</option>
+		        <option value="5">5</option>
+		        <option value="6">6</option>
+		        <option value="7">7</option>
+		        <option value="8">8</option>
+		        <option value="9">9</option>
+		        <option value="10">10</option>
+		        <option value="11">11</option>
+		        <option value="12">12</option>
+		        <option value="13">13</option>
+		        <option value="14">14</option>
+		        <option value="15">15</option>
+		        <option value="16">16</option>
+		        <option value="17">17</option>
+		        <option value="18">18</option>
+		        <option value="19">19</option>
+		        <option value="20">20</option>
+		        <option value="21">21</option>
+		        <option value="22">22</option>
+		        <option value="23">23</option>
+		        <option value="24">24</option>
+		        <option value="25">25</option>
+		        <option value="26">26</option>
+		        <option value="27">27</option>
+		        <option value="28">28</option>
+		        <option value="29">29</option>
+		        <option value="30">30</option>
+		        <option value="31">31</option>
+		    </select>
+		    <select id="month" name="month" onchange="updateDays()">
+		        <option value="1">Tháng 1</option>
+		        <option value="2">Tháng 2</option>
+		        <option value="3">Tháng 3</option>
+		        <option value="4">Tháng 4</option>
+		        <option value="5">Tháng 5</option>
+		        <option value="6">Tháng 6</option>
+		        <option value="7">Tháng 7</option>
+		        <option value="8">Tháng 8</option>
+		        <option value="9">Tháng 9</option>
+		        <option value="10">Tháng 10</option>
+		        <option value="11">Tháng 11</option>
+		        <option value="12">Tháng 12</option>
+		    </select>
+		    <select id="year" name="year" onchange="updateDays()">
+		    	<option value="2024">2000</option>
+		    	<option value="2024">2001</option>
+		    	<option value="2024">2002</option>
+		        <option value="2025">2003</option>
+		        <option value="2026">2004</option>
+		   		<option value="2024">2005</option>
+		        <option value="2025">2006</option>
+		        <option value="2026">2007</option>
+		   		<option value="2024">2008</option>
+		        <option value="2025">2009</option>
+		        <option value="2026">2010</option>
+		        <option value="2026">2011</option>
+		   		<option value="2024">2012</option>
+		        <option value="2025">2013</option>
+		        <option value="2026">2014</option>
+		   		<option value="2024">2015</option>
+		        <option value="2025">2016</option>
+		        <option value="2026">2017</option>
+		   		<option value="2024">2018</option>
+		        <option value="2025">2019</option>
+		        <option value="2026">2020</option>
+		    	<option value="2024">2021</option>
+		        <option value="2025">2022</option>
+		        <option value="2026">2023</option>
+		        <option value="2024">2024</option>
+		        <option value="2025">2025</option>
+		        <option value="2026">2026</option> 
+		    </select>
+		</div> -->
+		<tr>
+	      <td>Date of birth:</td>
+	      <td>
+	        <select name="year" id="year" onchange="updateDays()">
+	          <option>Year</option>
+	        </select>
+	        <select name="month" id="month" onchange="updateDays()">
+	          <option>Month</option>
+	        </select>
+	        <select name="day" id="day">
+	          <option>Day</option>
+	        </select>
+	      </td>
+	    </tr>
+		
+	    <tr>
+	      <td>Email:</td>
+	      <td><input type="email" name="txtEmail"></td>
+	    </tr>
+	    
+		<tr>
+      		<td>Mobile number:</td>
+			 <td><input type="number" name="txtMobileNumber" maxlength="10">(10 digit number)</td>
+		</tr>
+	
+		<tr>
+			<td> Gender</td>
+				<td>
+					Male<input type="radio" name="Gender" value="Male">
+					
+					Female<input type="radio" name="Gender" value="Fermale">
+				</td>
+		</tr>
+		<tr>
+			<td>Address</td>
+			<td><textarea rows="5"  name="taAddress"></textarea></td>
+		</tr>
+		<tr>
+			<td>City</td>
+			<td>
+				<input 
+					type="text" 
+					name="txtCity" 
+					maxlength="30" 
+	            	required
+	            	>
+				(max 30 characters a-z an A-Z)
+			</td>
+		</tr>
+		<tr>
+			<td>Pin code</td>
+			<td>
+				<input 
+					type="text" 
+					name="txtPinCode"
+					pattern="\d{6}"
+					required
+					>
+				(6 digit number) 
+			</td>
+		</tr>
+		<tr>
+			<td>State</td>
+			<td>
+				<input 
+					type="text" 
+					name="txtState" 
+					maxlength="30" 
+	            	required
+	            	>
+				(max 30 characters a-z an A-Z)
+			</td>
+		</tr>
+		<tr>
+			<td>Country</td>
+			<td>
+				<select id="txtCountry" name="txtCountry"></select>
+			</td>
+		</tr>
+		<tr>
+			<td>Hobbies</td>
+			<td>
+				Drawing
+					<input type="checkbox" name="ckHobbies" value="Drawing">
+				
+				Singing
+					<input type="checkbox" name="ckHobbies" value="Singing">
+				Dancing
+					<input type="checkbox" name="ckHobbies" value="Dancing">
+				Sketching
+					<input type="checkbox" name="ckHobbies" value="Sketching">
+				Others
+					<input type="checkbox" name="ckHobbies" value="Others" id="otherCk" onclick="toggleInput()" >
+					<input type="text" name="ckHobbies" id="otherIP" disabled> 
+			</td>
+			
+		</tr>
+		
+	  </table>
+		
+  <table>
+	<tr>
+		<td>
+	  		Qualification
+	  	<td>
+	  	<div class="blue-border">
+			 <table >
+			    <tr >
+			      <th>Sl.No.</th>
+			      <th>Examination</th>
+			      <th>Board</th>
+			      <th>Percentage</th>
+			      <th>Year of Passing</th>
+			    </tr>
+			    <tr>
+			      <td>1</td>
+			      <td>Class X</td>
+			      <td><input type="text" name="boardClassX" maxlength="10"></td>
+			      <td><input type="text" name="percentageClassX" maxlength="5"></td>
+			      <td><input type="text" name="yearClassX" maxlength="4"></td>
+			    </tr>
+			    <tr>
+			      <td>2</td>
+			      <td>Class XII</td>
+			      <td><input type="text" name="boardClassXII" maxlength="10"></td>
+			      <td><input type="text" name="percentageClassXII" maxlength="5"></td>
+			      <td><input type="text" name="yearClassXII" maxlength="4"></td>
+			    </tr>
+			    <tr>
+			      <td>3</td>
+			      <td>Graduation</td>
+			      <td><input type="text" name="boardGraduation" maxlength="10"></td>
+			      <td><input type="text" name="percentageGraduation" maxlength="5"></td>
+			      <td><input type="text" name="yearGraduation" maxlength="4"></td>
+			    </tr>
+			    <tr>
+			      <td>4</td>
+			      <td>Masters</td>
+			      <td><input type="text" name="boardMasters" maxlength="10"></td>
+			      <td><input type="text" name="percentageMasters" maxlength="5"></td>
+			      <td><input type="text" name="yearMasters" maxlength="4"></td>
+			    </tr>
+			     <tr>
+			      <td></td>
+			      <td></td>
+			      <td>(10 Char max)</td>
+			      <td>(upto 2 decimal)</td>
+			      <td></td>
+			    </tr>
+			 </table>
+			 </div>
+		</td>
+	</tr>
+	  <tr>
+	  	<td>
+	  		Course applies for
+	  	</td>
+	  	<td>
+	  		<label>BCA<input type="radio" name="txtCourse" value="BCA"> </label>
+		  	<label>B.Com<input type="radio" name="txtCourse" value="B.Com"> </label>
+		  	<label>B.Sc<input type="radio" name="txtCourse" value="B.Sc"></label>
+		  	<label>B.A<input type="radio" name="txtCourse" value="B.A"> </label>
+	  	</td>
+	  </tr>
+  </table>
+	  <div class="button-group">
+	    <button type="submit">Submit</button>
+	    <button type="reset">Reset</button>
+	  </div>
+	</form>
+</body>
+<script>
+		function toggleInput() {
+		    const otherCheckbox = document.getElementById('otherCk');
+		    const otherInput = document.getElementById('otherIP');
+		
+		    // Enable or disable the text input based on whether the checkbox is checked
+		    if (otherCheckbox.checked) {
+		      otherInput.disabled = false;
+		    } else {
+		      otherInput.disabled = true;
+		      otherInput.value = ''; // Clear the input field if unchecked
+		    }
+		  }
+        function updateDays() {
+            var month = document.getElementById('month').value;
+            var year = document.getElementById('year').value;
+            var daysInMonth = new Date(year, month, 0).getDate();
+
+            var daySelect = document.getElementById('day');
+            daySelect.innerHTML = '';
+
+            for (var day = 1; day <= daysInMonth; day++) {
+                var option = document.createElement('option');
+                option.value = day;
+                option.text = day;
+                daySelect.add(option);
+            }
+        }
+        
+        const selectElement_day = document.getElementById("day");
+    	for (let i = 1; i <= 31; i++) {
+    		const option = document.createElement("option");
+    		option.value = i;
+    		option.text = i;
+    		selectElement_day.appendChild(option);
+    	}
+    	
+    	const selectElement_month = document.getElementById("month");
+    	for (let i = 1; i <= 12; i++) {
+    		const option = document.createElement("option");
+    		option.value = i;
+    		option.text = i;
+    		selectElement_month.appendChild(option);
+    	}
+    	
+    	const selectElement_year = document.getElementById("year");
+    	const currentYear = new Date().getFullYear();
+    	for (let year = 1900; year <= currentYear; year++) {
+    		const option = document.createElement("option");
+    		option.value = year;
+    		option.text = year;
+    		selectElement_year.appendChild(option);
+    	}
+    	
+    	 document.addEventListener('DOMContentLoaded', function() {
+             fetch('https://restcountries.com/v3.1/all')
+                 .then(response => response.json())
+                 .then(data => {
+                     const select = document.getElementById('txtCountry');
+                     data.forEach(country => {
+                         const option = document.createElement('option');
+                         option.value = country.cca2; 
+                         option.textContent = country.name.common; 
+                         select.appendChild(option);
+                     });
+                 })
+                 .catch(error => console.error('Error loading countries:', error));
+         });
+    </script>
+</html>
