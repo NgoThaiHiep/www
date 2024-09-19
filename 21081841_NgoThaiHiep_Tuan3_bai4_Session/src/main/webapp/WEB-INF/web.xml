@@ -29,4 +29,14 @@
     <servlet-name>ProductListController</servlet-name>
     <url-pattern>/DSSP</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CartItemcontroller</display-name>
+    <servlet-name>CartItemcontroller</servlet-name>
+    <servlet-class>Shopping.controllers.CartItemcontroller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartItemcontroller</servlet-name>
+    <url-pattern>/CartItemcontroller</url-pattern>
+  </servlet-mapping>
 </web-app>

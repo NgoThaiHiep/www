@@ -51,12 +51,12 @@
   <table>
 	<tr>
 		<td>First name:</td>
-		<td><input type="text" name="txtFName" maxlength="30">(max 30 characters a-z an A-Z)</td>
+		<td><input type="text" name="txtFName" maxlength="30" required>(max 30 characters a-z an A-Z)</td>
     	
 	</tr>
     <tr>
     	<td>Last name:</td>
-      	<td><input type="text" name="txtLName" maxlength="30">(max 30 characters a-z an A-Z)</td>
+      	<td><input type="text" name="txtLName" maxlength="30" required>(max 30 characters a-z an A-Z)</td>
       	
     </tr>
 		
@@ -142,13 +142,13 @@
 		<tr>
 	      <td>Date of birth:</td>
 	      <td>
-	        <select name="year" id="year" onchange="updateDays()">
+	        <select name="year" id="year" onchange="updateDays()" required>
 	          <option>Year</option>
 	        </select>
-	        <select name="month" id="month" onchange="updateDays()">
+	        <select name="month" id="month" onchange="updateDays()" required>
 	          <option>Month</option>
 	        </select>
-	        <select name="day" id="day">
+	        <select name="day" id="day" required>
 	          <option>Day</option>
 	        </select>
 	      </td>
@@ -156,20 +156,20 @@
 		
 	    <tr>
 	      <td>Email:</td>
-	      <td><input type="email" name="txtEmail"></td>
+	      <td><input type="email" name="txtEmail" required></td>
 	    </tr>
 	    
 		<tr>
       		<td>Mobile number:</td>
-			 <td><input type="number" name="txtMobileNumber" maxlength="10">(10 digit number)</td>
+			 <td><input type="number" name="txtMobileNumber" maxlength="10" required>(10 digit number)</td>
 		</tr>
 	
 		<tr>
 			<td> Gender</td>
 				<td>
-					Male<input type="radio" name="Gender" value="Male">
+					Male<input type="radio" name="Gender" value="Male" required>
 					
-					Female<input type="radio" name="Gender" value="Fermale">
+					Female<input type="radio" name="Gender" value="Fermale" required>
 				</td>
 		</tr>
 		<tr>
@@ -215,14 +215,14 @@
 		<tr>
 			<td>Country</td>
 			<td>
-				<select id="txtCountry" name="txtCountry"></select>
+				<select id="txtCountry" name="txtCountry" required></select>
 			</td>
 		</tr>
 		<tr>
 			<td>Hobbies</td>
 			<td>
 				Drawing
-					<input type="checkbox" name="ckHobbies" value="Drawing">
+					<input type="checkbox" name="ckHobbies" value="Drawing" >
 				
 				Singing
 					<input type="checkbox" name="ckHobbies" value="Singing">
@@ -297,10 +297,10 @@
 	  		Course applies for
 	  	</td>
 	  	<td>
-	  		<label>BCA<input type="radio" name="txtCourse" value="BCA"> </label>
-		  	<label>B.Com<input type="radio" name="txtCourse" value="B.Com"> </label>
-		  	<label>B.Sc<input type="radio" name="txtCourse" value="B.Sc"></label>
-		  	<label>B.A<input type="radio" name="txtCourse" value="B.A"> </label>
+	  		<label>BCA<input type="radio" name="txtCourse" value="BCA" required> </label>
+		  	<label>B.Com<input type="radio" name="txtCourse" value="B.Com" required> </label>
+		  	<label>B.Sc<input type="radio" name="txtCourse" value="B.Sc" required></label>
+		  	<label>B.A<input type="radio" name="txtCourse" value="B.A" required> </label>
 	  	</td>
 	  </tr>
   </table>
