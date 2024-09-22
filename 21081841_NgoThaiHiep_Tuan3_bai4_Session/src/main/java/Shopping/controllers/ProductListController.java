@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -23,7 +24,7 @@ import Shopping.entity.Product;
 public class ProductListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	@Resource(name = "jdbc/Shopping")
+	@Resource(name = "jdbc/shopping")
 	private DataSource dataSource;
 	private ProductDao productDao;
 	
@@ -51,19 +52,22 @@ public class ProductListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Product p1 = new Product("Product1", 50000, "image1.png");
-		productDao.addProduct(p1);
-		Product p2 = new Product("Product2", 20000, "image2.png");
-		productDao.addProduct(p2);
-		Product p3 = new Product("Product3", 40000, "image3.png");
-		productDao.addProduct(p3);
-		Product p4 = new Product("Product4", 80000, "image4.png");
-		productDao.addProduct(p4);
-		Product p5 = new Product("Product5", 100000, "image5.png");
-		productDao.addProduct(p5);
+//		Product p1 = new Product("Product1", 50000, "image1.png");
+//		productDao.addProduct(p1);
+//		Product p2 = new Product("Product2", 20000, "image2.png");
+//		productDao.addProduct(p2);
+//		Product p3 = new Product("Product3", 40000, "image3.png");
+//		productDao.addProduct(p3);
+//		Product p4 = new Product("Product4", 80000, "image4.png");
+//		productDao.addProduct(p4);
+//		Product p5 = new Product("Product5", 100000, "image5.png");
+//		productDao.addProduct(p5);
 		
-		
-		request.setAttribute("products", productDao.findAll());
+		List<Product> products = productDao.findAll();
+		request.setAttribute("products", products);
+		for (Product p : productDao.findAll()) {
+			System.out.println(p.getId() + " " + p.getName() + " " + p.getPrice() + " " + p.getImage());
+		}
 		RequestDispatcher dispatcher =  request.getRequestDispatcher("/views/product/index.jsp");
 		dispatcher.forward(request, response);
 	}

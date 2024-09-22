@@ -51,6 +51,20 @@
 	    <groupId>org.glassfish.web</groupId>
 	    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
 	    <version>3.0.1</version>
+	    <exclusions>
+        <exclusion>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </exclusion>
+        <exclusion>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+        </exclusion>
+        <exclusion>
+            <groupId>javax.servlet.jsp.jstl</groupId>
+            <artifactId>jstl-api</artifactId>
+        </exclusion>
+    </exclusions>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
 	<dependency>

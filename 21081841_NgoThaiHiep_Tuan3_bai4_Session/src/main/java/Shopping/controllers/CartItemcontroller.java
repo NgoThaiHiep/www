@@ -11,13 +11,12 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.sql.DataSource;
 
-import org.checkerframework.checker.units.qual.s;
-import org.eclipse.tags.shaded.org.apache.regexp.recompile;
+
+
 
 import Shopping.daoImp.ProductDao;
 import Shopping.daoImp.ProductDaoImp;
@@ -30,7 +29,7 @@ import Shopping.entity.ItemCart;
 public class CartItemcontroller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	@Resource(name = "jdbc/Shopping")
+	@Resource(name = "jdbc/shopping")
 	private DataSource dataSource;
 	private ProductDao productDao;
     /**
@@ -90,25 +89,30 @@ public class CartItemcontroller extends HttpServlet {
 		}
 		return -1;
 	}
-	private void doGetBuy(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-		// TODO Auto-generated method stub
+	private void doGetBuy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	   
 		HttpSession session = request.getSession();
-		List<ItemCart> cart = null;
-		if(session.getAttribute("cart") == null) {
-			cart = new ArrayList<ItemCart>();
-		}else {
-			cart = (List<ItemCart>) session.getAttribute("cart");
-		}
-		int index = isProductExisting(Integer.parseInt(request.getParameter("id")), cart);
-		if(index == -1) {
-			cart.add(new ItemCart(productDao.getByID(Integer.parseInt(request.getParameter("id"))),-1));
-		}else {
-			int quantity = cart.get(index).getQuanlity() + 1;
-			cart.get(index).setQuanlity(quantity);
-		}
-		session.setAttribute("cart", cart);
-		response.sendRedirect("cart");
+		        List<ItemCart> cart = null;
+				if (session.getAttribute("cart") == null) {
+					cart = new ArrayList<>();
+					session.setAttribute("cart", cart);
+				} else {
+					cart = (List<ItemCart>) session.getAttribute("cart");
+				}
+				int index = isProductExisting(Integer.parseInt(request.getParameter("id")), cart);
+	        if (index == -1) {
+	            cart.add(new ItemCart(productDao.getByID(Integer.parseInt(request.getParameter("id"))), 1));
+	        } else {
+	            int quantity = cart.get(index).getQuantity() + 1;
+	            cart.get(index).setQuanlity(quantity);
+	        }
+
+	        session.setAttribute("cart", cart);
+	        response.sendRedirect("cart");
+
+	   
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
