@@ -26,6 +26,7 @@ public class ProductListController extends HttpServlet {
        
 	@Resource(name = "jdbc/shopping")
 	private DataSource dataSource;
+	
 	private ProductDao productDao;
 	
     /**

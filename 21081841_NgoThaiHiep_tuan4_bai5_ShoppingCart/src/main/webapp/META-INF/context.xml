@@ -1,0 +1,11 @@
+
+<context>
+	<Resource name="jdbc/shoppingBoook" auth="Container" type="javax.sql.DataSource"
+		maxActive="100" maxIdle="30" maxWait="10000" 
+		username="sa"
+		password="sapassword" 
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		url="jdbc:sqlserver://localhost:1455;databaseName=ShoppingBook;encrypt=false"
+ 	/>
+		
+</context>

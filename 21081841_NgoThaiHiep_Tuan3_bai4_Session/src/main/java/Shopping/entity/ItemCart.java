@@ -12,13 +12,18 @@ public class ItemCart {
 	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuanlity(int quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 	public ItemCart(Product product, int quanlity) {
 		super();
 		this.product = product;
 		this.quantity = quanlity;
+	}
+	
+	public ItemCart(Product product) {
+		super();
+		this.product = product;
 	}
 	public ItemCart() {
 		super();

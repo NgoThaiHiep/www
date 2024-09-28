@@ -34,7 +34,6 @@
 		<c:forEach var="item" items="${sessionScope.cart}">
 	    <c:set var="qua" value="${qua + item.quantity}"></c:set>
 	    <c:set var="total" value="${total + item.product.price * item.quantity}"></c:set>
-	  
 			<tr width="120" height = "120" >
 	        <td>${item.product.id}</td>
 	        <td>${item.product.name}</td>

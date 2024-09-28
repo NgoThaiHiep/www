@@ -51,7 +51,9 @@ public class CartItemcontroller extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		String  action = request.getParameter("action") != null ? request.getParameter("action") : "";
+		System.out.println(action + "action");
 		switch (action) {
 		case "buy":
 			doGetBuy(request, response);
@@ -104,7 +106,7 @@ public class CartItemcontroller extends HttpServlet {
 	            cart.add(new ItemCart(productDao.getByID(Integer.parseInt(request.getParameter("id"))), 1));
 	        } else {
 	            int quantity = cart.get(index).getQuantity() + 1;
-	            cart.get(index).setQuanlity(quantity);
+	            cart.get(index).setQuantity(quantity);
 	        }
 
 	        session.setAttribute("cart", cart);
